@@ -1,18 +1,21 @@
 //! Types related to task management
 
 use super::TaskContext;
+use crate::config::SYSCALL_NUM;
 
 /// The task control block (TCB) of a task.
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Debug)]
 pub struct TaskControlBlock {
     /// The task status in it's lifecycle
     pub task_status: TaskStatus,
     /// The task context
     pub task_cx: TaskContext,
+    /// The syscall count
+    pub syscall_trace: [isize; SYSCALL_NUM],
 }
 
 /// The status of a task
-#[derive(Copy, Clone, PartialEq)]
+#[derive(Copy, Clone, PartialEq, Debug)]
 pub enum TaskStatus {
     /// uninitialized
     UnInit,
