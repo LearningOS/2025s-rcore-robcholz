@@ -11,7 +11,7 @@ pub const KERNEL_HEAP_SIZE: usize = 0x20000;
 /// the max number of apps
 pub const MAX_APP_NUM: usize = 16;
 /// the number of syscalls
-pub const SYSCALL_NUM: usize = 512;
+pub const SYSCALL_NUM: usize = 500;
 /// base_addr(changed) of app
 pub const APP_BASE_ADDRESS: usize = 0x80400000;
 /// size limit of app
